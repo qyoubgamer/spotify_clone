@@ -26,7 +26,7 @@ export default function Dashboard({ code }) {
   useEffect(() => { 
     if (!playingTrack) return
 
-    axios.get('http://localhost:3002/lyrics', {
+    axios.get('https://helpful-hamster-06e581.netlify.app/Lyrics', {
       params: {
         track: playingTrack.title,
         artist: playingTrack.artist

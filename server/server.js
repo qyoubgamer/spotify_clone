@@ -62,4 +62,4 @@ app.get('/lyrics', async (req, res) => {
   res.json({lyrics})
 })
 
-app.listen(3002)
+app.listen("https://helpful-hamster-06e581.netlify.app")

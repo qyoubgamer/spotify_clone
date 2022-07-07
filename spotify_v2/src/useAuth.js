@@ -7,7 +7,7 @@ export default function useAuth(code) {
   const [expiresIn, setExpiresIn] = useState();
 
   useEffect(() => {
-    axios.post("http://localhost:3002/login", { code }).then(res => {
+    axios.post("https://helpful-hamster-06e581.netlify.app/login", { code }).then(res => {
       setAccessToken(res.data.accessToken);
       setRefreshToken(res.data.refreshToken);
       setExpiresIn(res.data.expiresIn);
@@ -21,7 +21,7 @@ export default function useAuth(code) {
   useEffect(() => {
     if (!refreshToken || !expiresIn) return
     const interval = setInterval(() => {
-    axios.post("http://localhost:3002/refresh", { refreshToken })
+    axios.post("https://helpful-hamster-06e581.netlify.app/refresh", { refreshToken })
     .then(res => {
       setAccessToken(res.data.accessToken);
       setExpiresIn(res.data.expiresIn);
